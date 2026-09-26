@@ -20,7 +20,7 @@ import {
   lookupSwapApi,
 } from 'helpers/swapApiCalls';
 import { exchangeIdRegex } from 'helpers/general';
-import { SwapStep, TX_FETCH_INTERVAL_MS } from 'helpers/swapConfig';
+import { SWAP_ENABLED, SwapStep, TX_FETCH_INTERVAL_MS } from 'helpers/swapConfig';
 import LoadingMessage from 'components/Atoms/LoadingMessage';
 
 const SwapWrapper = styled.div`
@@ -98,7 +98,7 @@ const getErrorMessage = msg => {
   }
 };
 
-export default function Swap() {
+function SwapFlow() {
   const [prices, setPrices] = useState(null);
   const [depositAmount, setDepositAmount] = useState(0);
   const [depositAddress, setDepositAddress] = useState(null);
@@ -256,6 +256,39 @@ export default function Swap() {
             you are seeking any assistance.
           </Disclaimer>
         </FlexColCenter>
+      </SwapRoot>
+    </div>
+  );
+}
+
+const PausedNotice = styled.div`
+  max-width: 740px;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+`;
+
+export default function Swap() {
+  if (SWAP_ENABLED) {
+    return <SwapFlow />;
+  }
+  return (
+    <div>
+      <PageMeta title="Swap TKL | Tokel Platform" description="" />
+      <SwapRoot starsTop={'1000px'}>
+        <PurpleBorderBox>
+          <PausedNotice>
+            <h3>Direct swaps are paused</h3>
+            <p>
+              Direct swaps are unavailable while the Tokel network is being relaunched.
+              Do not send funds to any swap deposit address you may have received earlier.
+            </p>
+            <p>
+              For updates, join us on <a href={links.discord}>Discord</a>.
+            </p>
+          </PausedNotice>
+        </PurpleBorderBox>
       </SwapRoot>
     </div>
   );

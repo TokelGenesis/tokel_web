@@ -18,6 +18,7 @@ import partnersBg from "images/backgrounds/partners.svg"
 import PageMeta from "components/Molecules/PageMeta"
 import ClickableIcon from "components/Atoms/ClickableIcon"
 import icons from "data/icons"
+import { SWAP_ENABLED } from "helpers/swapConfig"
 import AvailableCurrencies from "components/Molecules/AvailableCurrencies"
 
 const MainPage = styled.div`
@@ -56,14 +57,18 @@ const IndexPage = ()  => {
         <PartnersSection>
           <SectionList title="Our Partners" data={partnersData}/>
           <SectionList id="buy-tkl" title="Buy Tokel" data={exchangeData}/>
-          <h3>Direct swaps</h3>
-          <VSpacerSmall/>
-          <ClickableIcon 
-            link="/swap"
-            icon={icons.swappurple}
-            width="100px"/>
-          <VSpacerBig/>
-          <AvailableCurrencies />
+          {SWAP_ENABLED && (
+            <>
+              <h3>Direct swaps</h3>
+              <VSpacerSmall/>
+              <ClickableIcon 
+                link="/swap"
+                icon={icons.swappurple}
+                width="100px"/>
+              <VSpacerBig/>
+              <AvailableCurrencies />
+            </>
+          )}
         </PartnersSection>
         {/* <BannerSubscribe /> */}
       </PageRoot>

@@ -45,3 +45,11 @@ export const  getTKLValue = (amount: string, price: string): string => (new BN(t
  * @returns 
  */
 export const getBtcFormatAmount = (amnt: string) => toBitcoinAmount(toSatoshi(amnt));
+
+/**
+ * Direct swaps go through a third-party service (dexstats.info) that takes
+ * the user's KMD/BTC/... deposit and pays out TKL. Keep them off unless the
+ * site is built with GATSBY_ENABLE_SWAP=true, so the site never takes users'
+ * funds while that service cannot deliver TKL.
+ */
+export const SWAP_ENABLED = process.env.GATSBY_ENABLE_SWAP === 'true';
