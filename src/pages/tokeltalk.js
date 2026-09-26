@@ -4,7 +4,7 @@ import { Form, Formik } from 'formik';
 
 import FormRow from '../components/Atoms/FormRow';
 import FormRowBlock from '../components/Molecules/FormRowBlock';
-import Img from 'gatsby-image';
+import { GatsbyImage as Img } from "gatsby-plugin-image"
 import PodcastRoot from './template';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -147,7 +147,7 @@ const pickFields = option => {
 const getPodcastLinks = data =>
   Object.keys(podcasts).map(podcastPlatform => (
     <a key={podcastPlatform} href={links[podcastPlatform]}>
-      <Img alt={podcastPlatform} fixed={data[podcastPlatform].childImageSharp.fixed}></Img>
+      <Img alt={podcastPlatform} image={data[podcastPlatform].childImageSharp.gatsbyImageData}></Img>
     </a>
   ));
 
@@ -280,51 +280,37 @@ export const query = graphql`
   query {
     tokeltalk: file(relativePath: { eq: "podcast/tokeltalk.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 900) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 900, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
     applePodcasts: file(relativePath: { eq: "podcast/listen-on-apple.png" }) {
       childImageSharp {
-        fixed(height: 58) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 58, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     amazonMusic: file(relativePath: { eq: "podcast/listen-on-amazon.png" }) {
       childImageSharp {
-        fixed(height: 58) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 58, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     deezer: file(relativePath: { eq: "podcast/listen-on-deezer.png" }) {
       childImageSharp {
-        fixed(height: 58) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 58, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     googlePodcasts: file(relativePath: { eq: "podcast/listen-on-google.png" }) {
       childImageSharp {
-        fixed(height: 58) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 58, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     spotify: file(relativePath: { eq: "podcast/listen-on-spotify.png" }) {
       childImageSharp {
-        fixed(height: 58) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 58, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     stitcher: file(relativePath: { eq: "podcast/listen-on-stitcher.png" }) {
       childImageSharp {
-        fixed(height: 58) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 58, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
   }

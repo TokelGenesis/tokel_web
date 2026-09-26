@@ -47,7 +47,7 @@ export default function Team({data}) {
         <PageHeader>Tokel Contributors</PageHeader>
         <ContributorsMesh>
           {contributors.map(person => 
-            <Contributor key={person.name} name={person.name} imageCircle={data[person.image].childImageSharp.fixed} position={person.position} socials={person.socials}/>
+            <Contributor key={person.name} name={person.name} imageCircle={data[person.image].childImageSharp.gatsbyImageData} position={person.position} socials={person.socials}/>
           )}
         </ContributorsMesh>
         <ContributorSection>
@@ -73,100 +73,72 @@ export const query = graphql`
   query {
     acnebs: file(relativePath: { eq: "team/acnebs.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }     
     ahmedDhaif: file(relativePath: { eq: "team/ahmed.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     alright: file(relativePath: { eq: "team/alright-image.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     cascrypto: file(relativePath: { eq: "team/cascrypto.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     blue: file(relativePath: { eq: "team/blue.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     daria: file(relativePath: { eq: "team/daria.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }
     dimxy: file(relativePath: { eq: "team/dimxy.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     } 
     dreamTim: file(relativePath: { eq: "team/dreamTim.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }  
     ejuliano: file(relativePath: { eq: "team/ejuliano.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     } 
     gingerDesign: file(relativePath: { eq: "team/gingerDesign.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }  
     gray: file(relativePath: { eq: "team/gray.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     } 
     kelcie: file(relativePath: { eq: "team/kelcie.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     } 
     lenilsonjr: file(relativePath: { eq: "team/lenilsonjr.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     } 
     nutella: file(relativePath: { eq: "team/nutella.png" }) {
       childImageSharp {
-        fixed(height: 80) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(height: 80, layout: FIXED, formats: [AUTO, WEBP])
       }
     }                             
   }

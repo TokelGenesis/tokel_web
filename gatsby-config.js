@@ -12,8 +12,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     // "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
-    "gatsby-plugin-eslint",
+    "gatsby-plugin-image",
     "gatsby-plugin-root-import",
     "gatsby-transformer-sharp",
     {

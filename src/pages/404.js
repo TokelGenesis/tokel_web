@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { Link, graphql } from "gatsby"
 
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image"
 import PageRoot from './template';
 import PropTypes from 'prop-types'
 import styled from "@emotion/styled"
@@ -41,7 +41,7 @@ const NotFoundPage = ({data}) => {
             <Link to="/">Home</Link>
           </h3>
           <ImageWrapper>
-            <Img alt="satelite" fluid={data.satelite.childImageSharp.fluid}></Img>
+            <Img alt="satelite" image={data.satelite.childImageSharp.gatsbyImageData}></Img>
           </ImageWrapper>
         </PageContent>
     </PageRoot>
@@ -52,9 +52,7 @@ export const query = graphql`
   query {
     satelite: file(relativePath: { eq: "satelitex2.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 350) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 350, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
   }

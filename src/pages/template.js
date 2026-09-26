@@ -30,9 +30,7 @@ export const query = graphql`
   query {
     dash: file(relativePath: { eq: "dashboard.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 900) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 900, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
   }

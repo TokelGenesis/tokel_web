@@ -3,12 +3,12 @@ import ClickableIcon from 'components/Atoms/ClickableIcon';
 import icons from 'data/icons';
 import React from 'react';
 import { FlexRow } from 'styles/common';
-import Img, { FixedObject } from 'gatsby-image';
+import { GatsbyImage as Img, IGatsbyImageData } from 'gatsby-plugin-image';
 
 type ContributorProps = {
   name: string;
   position: string;
-  imageCircle: FixedObject;
+  imageCircle: IGatsbyImageData;
   socials: [
     {
       type: string;
@@ -42,7 +42,7 @@ const Position = styled.p`
 export default function Contributor({ name, position, imageCircle, socials }: ContributorProps) {
   return (
     <ContributorRoot>
-      <Img alt={name} fixed={imageCircle}></Img>
+      <Img alt={name} image={imageCircle}></Img>
       <h5>{name}</h5>
       <Position>{position}</Position>
       <FlexRow>

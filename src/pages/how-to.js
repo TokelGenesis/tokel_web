@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import Img from 'gatsby-image'
+import { GatsbyImage as Img } from "gatsby-plugin-image"
 import PageRootContainer from "./template"
 import PropTypes from 'prop-types'
 import breakpoints from "../styles/breakpoints"
@@ -74,7 +74,7 @@ const HowTo = ({data})  => {
                   <OptionWrapper key={section.title}>
                     <h4>{section.title}<br/>{section.subtitle}</h4>
                     <ImgWrapper>
-                      <Img alt={section.imageAlt} fluid={data[section.image].childImageSharp.fluid}></Img>
+                      <Img alt={section.imageAlt} image={data[section.image].childImageSharp.gatsbyImageData}></Img>
                     </ImgWrapper>
                     {section.links.map(link => (
                       <div key={link.urlName}>
@@ -92,30 +92,22 @@ export const query = graphql`
   query {
     app: file(relativePath: { eq: "howto/app.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 400) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 400, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
     cli: file(relativePath: { eq: "howto/cli.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 400) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 400, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
     docs: file(relativePath: { eq: "howto/docs.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 400) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 400, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
     nspv: file(relativePath: { eq: "howto/nspv.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 400) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(quality: 100, width: 400, layout: CONSTRAINED, formats: [AUTO, WEBP])
       }
     }
   }
