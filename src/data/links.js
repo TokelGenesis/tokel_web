@@ -1,11 +1,11 @@
 const links = {
   discord: 'https://discord.gg/R9u43zYZka',
   twitter: 'https://twitter.com/TokelPlatform',
-  github: 'https://github.com/TokelPlatform/',
-  github_dapp: 'https://github.com/TokelPlatform/tokel_dapp',
-  github_chain: 'https://github.com/TokelPlatform/komodo',
+  github: 'https://github.com/TokelGenesis',
+  github_dapp: 'https://github.com/TokelGenesis/tokel_dapp',
+  github_chain: 'https://github.com/TokelGenesis/tokel',
   github_release_page: 'https://github.com/TokelPlatform/tokel_app/releases',
-  github_nspv: 'https://github.com/TokelPlatform/nspv-js',
+  github_nspv: 'https://github.com/TokelGenesis/nspv-js',
   openseaImage: 'https://opensea.io/assets/0xc2c747e0f7004f9e8817db2ca4997657a7746928/8064',
   superrareImage: 'https://superrare.co/artwork-v2/cochleanaut-18746',
   donate: 'https://discord.gg/R9u43zYZka',
@@ -23,7 +23,7 @@ const links = {
   bittube: 'https://bittube.tv/profile/Tokel',
   telegram: 'https://t.me/TokelPlatformchat',
   nspv: 'https://developers.komodoplatform.com/basic-docs/smart-chains/smart-chain-setup/nspv.html#introduction',
-  nspvApi: 'https://github.com/TokelPlatform/nspv-js/blob/development/API.md',
+  nspvApi: 'https://github.com/TokelGenesis/nspv-js/blob/genesis/API.md',
   atomicDex: 'https://atomicdex.io/',
   idoLiveStream: 'https://www.youtube.com/watch?v=WQ39eTAgdB0',
   aDEXStepByStep: 'https://docs.tokel.io/guides/HowToUseAtomicDEX/',
@@ -57,9 +57,9 @@ const links = {
   createTokelWallet: 'https://www.youtube.com/watch?v=kYiV41XeWfg',
   nftPodcastTop: 'https://www.bcast.fm/blog/best-nft-podcasts',
   komodo: 'https://komodoplatform.com/',
-  mailContact: 'mailto:contact@tokel.io',
-  mailSupport: 'mailto:support@tokel.io',
-  exploreTokel: 'https://exploretokel.com',
+  mailContact: 'mailto:imperialtokel@gmail.com',
+  mailSupport: 'mailto:imperialtokel@gmail.com',
+  exploreTokel: 'https://explorer.tokel.io/',
 };
 
 export const podcasts = {

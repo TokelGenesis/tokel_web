@@ -4,6 +4,7 @@ import Comparison from "components/Organisms/Comparison"
 import PageRoot from "./template"
 import PropTypes from 'prop-types'
 import WelcomeText from "components/Molecules/WelcomeText"
+import GenesisBanner from "components/Molecules/GenesisBanner"
 import breakpoints from "styles/breakpoints"
 import styled from "@emotion/styled"
 import UseCases from "components/Organisms/UseCases"
@@ -43,10 +44,11 @@ const IndexPage = ()  => {
   return (
     <MainPage>
       <PageMeta
-        title="Tokel | Making NFT & Token Creation Easy For Everyone"
+        title="Tokel Genesis | 創世紀・新篇章 | NFT & Token Creation For Everyone"
         description="Tokel truly opens the door for every single person to create & access tokens and NFTs in an inexpensive, decentralized fashion."
       />
       <PageRoot>
+        <GenesisBanner />
         <WelcomeText />
         <VSpacerBig/>
         <div id="compare"/>
